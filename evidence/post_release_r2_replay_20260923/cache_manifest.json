@@ -1,0 +1,26 @@
+{
+  "thread_limit": 2,
+  "corpus": 3633,
+  "source_sha256": {
+    "nfcorpus/corpus.jsonl": "10cc83ef1826b1425e6a87090b5140b39b27755d5a27e48215a88611c899991f",
+    "nfcorpus/qrels/dev.tsv": "b1d38b5e8f78c4a5820bce2b7ec2db54911d7690dc601e76811846b211180bd8",
+    "nfcorpus/qrels/test.tsv": "f8fba6ef3d4dd9c3a242a8ba4ae38276fc3622fce7dcbae764766d564542fd2a",
+    "nfcorpus/qrels/train.tsv": "6336b80f9bffc4f063f3aa450047ad35c0b7c534efe4a6ba35e16dbace047f6a",
+    "nfcorpus/queries.jsonl": "d024e6621b84925d485ae473d316a0c3af31c62c8068a59fb29d22f7613aef2a"
+  },
+  "train": {
+    "queries": 2590,
+    "cache_sha256": "2d357d4c86c78a1560b7b9b4fde0c2b133a3a1b0c80a1ae94632691494e34a55",
+    "qrels_sha256": "6336b80f9bffc4f063f3aa450047ad35c0b7c534efe4a6ba35e16dbace047f6a"
+  },
+  "dev": {
+    "queries": 324,
+    "cache_sha256": "7e8430988983b1c538046b520e90a2f5ade719b691d2e766c3640bcaed7c9b88",
+    "qrels_sha256": "b1d38b5e8f78c4a5820bce2b7ec2db54911d7690dc601e76811846b211180bd8"
+  },
+  "test": {
+    "queries": 323,
+    "cache_sha256": "f06d4438dfa2b8912db0afb25e38f32518ae1fc44c25f6cadc1579dc0aefd700",
+    "qrels_sha256": "f8fba6ef3d4dd9c3a242a8ba4ae38276fc3622fce7dcbae764766d564542fd2a"
+  }
+}
