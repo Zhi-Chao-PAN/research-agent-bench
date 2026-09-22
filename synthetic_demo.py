@@ -68,6 +68,7 @@ def run_trial(task: Path, number: int, candidate: dict, hypothesis: str) -> dict
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--keep", action="store_true", help="Keep the generated task for manual inspection")
+    parser.add_argument("--manual", action="store_true", help="Create an empty synthetic task for a person's own six calls")
     args = parser.parse_args()
     task = ROOT / f".synthetic-task-{uuid4().hex}"
     try:
@@ -89,6 +90,15 @@ def main() -> None:
             ).replace("NFCorpus", "synthetic fixture"),
             encoding="utf-8",
         )
+        if args.manual:
+            print(json.dumps({
+                "status": "READY_FOR_PERSONAL_TRIAL",
+                "dataset": "fabricated fixture; no NFCorpus data or research result",
+                "task_directory": str(task),
+                "calls_used": 0,
+                "next_step": "Read TASK.md, write a candidate JSON and hypothesis, then run supervisor.py yourself.",
+            }, indent=2))
+            return
         proposals = [
             ({"k": 60, "bm25_weight": 0.0}, "Check the TF-IDF-only ranking on three fabricated queries."),
             ({"k": 60, "bm25_weight": 1.0}, "Check whether BM25 ranks the relevant document earlier."),
@@ -127,7 +137,7 @@ def main() -> None:
             "task_directory": str(task) if args.keep else "removed after verification",
         }, indent=2))
     finally:
-        if not args.keep and task.exists():
+        if not (args.keep or args.manual) and task.exists():
             shutil.rmtree(task)
 
 

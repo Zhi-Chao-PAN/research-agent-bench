@@ -33,7 +33,7 @@ python3 verify_public_traces.py
 
 预期状态 `PASS_TRACE_ONLY`。它检查三条轨迹各六次调用、候选与先行假设文件哈希、开发集选优、以及历史结果文件彼此一致；**它没有重算 NFCorpus 分数**。历史全量环境的复核记录在 `final_verification.json` 和 `fresh-repeat-v5/verification.json`，两者不能替代当前机器上从数据重建的检验。
 
-如果只想亲手看一次完整的预算控制和开发反馈，可先安装下节的锁定依赖，然后运行 `python synthetic_demo.py`。它用**自造的 3 条查询和 12 篇虚构文档**创建任务，执行六次候选评价，确认第七次被拒绝，并按实际开发反馈选优。预期 `PASS_SYNTHETIC_DEMO`；默认会清理临时任务。这个演示没有 NFCorpus 数据，也不提供论文成绩或泛化证据。加 `--keep` 可保留生成的 `.synthetic-task-*` 目录，检查 `TASK.md`、`state.json` 与各次日志；该目录已被 Git 忽略。
+如果只想亲手看一次完整的预算控制和开发反馈，可先安装下节的锁定依赖，然后运行 `python synthetic_demo.py`。它用**自造的 3 条查询和 12 篇虚构文档**创建任务，执行六次候选评价，确认第七次被拒绝，并按实际开发反馈选优。预期 `PASS_SYNTHETIC_DEMO`；默认会清理临时任务。这个演示没有 NFCorpus 数据，也不提供论文成绩或泛化证据。加 `--keep` 可保留自动演示的 `.synthetic-task-*` 目录；加 `--manual` 则会保留一个**尚未调用评价器**的任务，供本人读 `TASK.md` 后亲自提出候选、解释假设并运行。生成目录已被 Git 忽略。
 
 ## 从上游数据重建和复核
 
