@@ -85,9 +85,12 @@ def main() -> None:
             )
         task_doc = task / "TASK.md"
         task_doc.write_text(
-            task_doc.read_text(encoding="utf-8").replace(
-                "BEIR NFCorpus", "fabricated synthetic fixture (not NFCorpus)"
-            ).replace("NFCorpus", "synthetic fixture"),
+            task_doc.read_text(encoding="utf-8")
+            .replace("NFCorpus", "synthetic fixture")
+            .replace(
+                "BEIR synthetic fixture",
+                "fabricated 3-query, 12-document fixture (not NFCorpus)",
+            ),
             encoding="utf-8",
         )
         if args.manual:
