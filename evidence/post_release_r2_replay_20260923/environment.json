@@ -1,0 +1,25 @@
+{
+  "date": "2026-09-23",
+  "execution": "AI agent in a new WSL ext4 directory on the same physical machine",
+  "source_tag": "reviewer-snapshot-2026-09-23-r2",
+  "source_commit": "e23760f64c772cf7225280a991fd102740c78def",
+  "archive_source": "Retained local copy of the pinned upstream NFCorpus ZIP; not a fresh network download",
+  "archive_sha256": "efe5be03f8c5b86a5870102d0599d227c8c6e2484328e68c6522560385671b0b",
+  "archive_bytes": 2448432,
+  "python": "3.12.14",
+  "packages": {
+    "cloudpickle": "3.1.2",
+    "joblib": "1.6.0",
+    "numpy": "2.2.6",
+    "rank-bm25": "0.2.2",
+    "scikit-learn": "1.6.1",
+    "scipy": "1.18.1",
+    "threadpoolctl": "3.7.0"
+  },
+  "omitted_inputs": [
+    "NFCorpus text",
+    "qrels rows",
+    "derived rank caches",
+    "raw top-10 predictions"
+  ]
+}

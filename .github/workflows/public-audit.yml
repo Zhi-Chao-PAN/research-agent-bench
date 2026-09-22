@@ -18,6 +18,8 @@ jobs:
           python-version: '3.12'
       - name: Check archived trace and selection integrity
         run: python verify_public_traces.py
+      - name: Check post-release replay record integrity
+        run: sha256sum -c POST_RELEASE_R2_SHA256SUMS
       - name: Install the pinned evaluator dependencies
         run: python -m pip install -r requirements-lock.txt
       - name: Exercise the evaluator and six-call gate on fabricated data
