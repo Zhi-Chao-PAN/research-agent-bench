@@ -22,3 +22,12 @@ jobs:
         run: python -m pip install -r requirements-lock.txt
       - name: Exercise the evaluator and six-call gate on fabricated data
         run: python synthetic_demo.py
+
+  container-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: Build the data-free audit image
+        run: docker build -f Dockerfile.audit -t research-agent-bench-audit:ci .
+      - name: Run checks with networking disabled
+        run: docker run --rm --network none research-agent-bench-audit:ci

@@ -2,6 +2,8 @@
 
 [English method note](METHOD_NOTE_EN.md)
 
+[Paper-to-task reviewer index](PAPER_TO_TASK.md) maps the original RRF/BEIR methods to this repository's bounded evaluator and makes the deviations, task-suitability decision and authorship limits explicit.
+
 [Public evidence audit](https://github.com/Zhi-Chao-PAN/research-agent-bench/actions/workflows/public-audit.yml) runs the trace check and the fabricated-data evaluator demo on every push.
 
 这个项目把加权 RRF 的两个参数变成可重复执行的研究代理任务：代理先写假设，再用最多六次开发集反馈选择配置；研究者用固定评分器、等预算搜索和公开测试检查它的选择。任务基于 BEIR NFCorpus 的 BM25、TF-IDF 排名，主指标是**指数增益** nDCG@10（`2^rel−1`），与常见线性增益榜单数值不可直接混用。
@@ -34,6 +36,17 @@ python3 verify_public_traces.py
 预期状态 `PASS_TRACE_ONLY`。它检查三条轨迹各六次调用、候选与先行假设文件哈希、开发集选优、以及历史结果文件彼此一致；**它没有重算 NFCorpus 分数**。历史全量环境的复核记录在 `final_verification.json` 和 `fresh-repeat-v5/verification.json`，两者不能替代当前机器上从数据重建的检验。
 
 如果只想亲手看一次完整的预算控制和开发反馈，可先安装下节的锁定依赖，然后运行 `python synthetic_demo.py`。它用**自造的 3 条查询和 12 篇虚构文档**创建任务，执行六次候选评价，确认第七次被拒绝，并按实际开发反馈选优。预期 `PASS_SYNTHETIC_DEMO`；默认会清理临时任务。这个演示没有 NFCorpus 数据，也不提供论文成绩或泛化证据。加 `--keep` 可保留自动演示的 `.synthetic-task-*` 目录；加 `--manual` 则会保留一个**尚未调用评价器**的任务，供本人读 `TASK.md` 后亲自提出候选、解释假设并运行。生成目录已被 Git 忽略。
+
+### Docker 轻量复核
+
+若本机已有可用的 Docker 引擎，可从仓库根目录构建固定 Python 3.12.14 基础镜像的审计容器，并在**断网运行阶段**执行与上面相同的两项公开检查：
+
+```bash
+docker build -f Dockerfile.audit -t research-agent-bench-audit:2026-09-23 .
+docker run --rm --network none research-agent-bench-audit:2026-09-23
+```
+
+镜像仅安装固定版本 NumPy 供虚构数据演示使用；`verify_public_traces.py` 不依赖 NFCorpus 原文。预期依次输出 `PASS_TRACE_ONLY` 和 `PASS_SYNTHETIC_DEMO`。`--network none` 只约束运行阶段；构建时仍须从上游下载基础镜像与 Python 包。容器**不重建 NFCorpus 排名缓存、不重跑 LLM 轨迹、不证明申请人本人会使用 Docker**。公开 CI 的 `container-audit` 工作会实际构建、运行此入口；若本机 Docker Desktop 未为 WSL 发行版启用集成，仍须把本机运行状态记为未验收。
 
 ## 从上游数据重建和复核
 
