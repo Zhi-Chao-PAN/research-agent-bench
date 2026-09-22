@@ -1,0 +1,24 @@
+name: Public evidence audit
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - name: Check archived trace and selection integrity
+        run: python verify_public_traces.py
+      - name: Install the pinned evaluator dependencies
+        run: python -m pip install -r requirements-lock.txt
+      - name: Exercise the evaluator and six-call gate on fabricated data
+        run: python synthetic_demo.py

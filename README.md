@@ -2,6 +2,8 @@
 
 [English method note](METHOD_NOTE_EN.md)
 
+[Public evidence audit](https://github.com/Zhi-Chao-PAN/research-agent-bench/actions/workflows/public-audit.yml) runs the trace check and the fabricated-data evaluator demo on every push.
+
 这个项目把加权 RRF 的两个参数变成可重复执行的研究代理任务：代理先写假设，再用最多六次开发集反馈选择配置；研究者用固定评分器、等预算搜索和公开测试检查它的选择。任务基于 BEIR NFCorpus 的 BM25、TF-IDF 排名，主指标是**指数增益** nDCG@10（`2^rel−1`），与常见线性增益榜单数值不可直接混用。
 
 **结果是负面的。** 历史一条和新增三条真实六轮 LLM 轨迹已经执行。三条新增轨迹都选中 `k=100, BM25 weight=0.5`，同一组 323 条公开测试查询的指数 nDCG@10 为 **0.307044**，低于预设六点搜索的 **0.307294**。三条轨迹只产生**一组唯一测试排序**，不能算三份独立泛化结果。189 点参数面与 100 组各六次的随机搜索只是数值对照；100 组不是 100 条 LLM 轨迹。历史轨迹得分 0.308875，但与预设六点搜索的配对查询区间包含零。
@@ -30,6 +32,8 @@ python3 verify_public_traces.py
 ```
 
 预期状态 `PASS_TRACE_ONLY`。它检查三条轨迹各六次调用、候选与先行假设文件哈希、开发集选优、以及历史结果文件彼此一致；**它没有重算 NFCorpus 分数**。历史全量环境的复核记录在 `final_verification.json` 和 `fresh-repeat-v5/verification.json`，两者不能替代当前机器上从数据重建的检验。
+
+如果只想亲手看一次完整的预算控制和开发反馈，可先安装下节的锁定依赖，然后运行 `python synthetic_demo.py`。它用**自造的 3 条查询和 12 篇虚构文档**创建任务，执行六次候选评价，确认第七次被拒绝，并按实际开发反馈选优。预期 `PASS_SYNTHETIC_DEMO`；默认会清理临时任务。这个演示没有 NFCorpus 数据，也不提供论文成绩或泛化证据。加 `--keep` 可保留生成的 `.synthetic-task-*` 目录，检查 `TASK.md`、`state.json` 与各次日志；该目录已被 Git 忽略。
 
 ## 从上游数据重建和复核
 

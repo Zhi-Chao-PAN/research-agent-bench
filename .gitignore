@@ -5,6 +5,7 @@ raw/
 data/
 cache/
 new-agent-dev/
+.synthetic-task-*/
 reproduced/
 reproduced-phase2/
 local_phase2_verification.json
