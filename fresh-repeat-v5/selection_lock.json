@@ -1,0 +1,147 @@
+{
+  "status": "FROZEN_BEFORE_NEW_TEST_EVALUATION",
+  "created_at": "2026-09-22T18:54:53.550307+00:00",
+  "selection_rule": "highest development nDCG@10, ties earliest trial",
+  "trajectories": [
+    {
+      "name": "fresh-dev-agent-01",
+      "status": "SIX_DEV_CALLS_COMPLETE",
+      "selected_trial": 5,
+      "selected_candidate": {
+        "k": 100,
+        "bm25_weight": 0.5
+      },
+      "selected_dev_ndcg_exp_at_10": 0.2651829847739129,
+      "state_sha256": "66db1a0a2b58af5cc4ae79caefe5974a2353f202f912b8a85a9fa8746a656348",
+      "task_sha256": "1c9880e5ec6323e7c8d74dda0d3d0139c4db292afb653dd1d0fab28ad1c9f401",
+      "immutable_input_sha256": {
+        "data/dev_ranks.npz": "7e8430988983b1c538046b520e90a2f5ade719b691d2e766c3640bcaed7c9b88",
+        "data/dev_qrels.tsv": "b1d38b5e8f78c4a5820bce2b7ec2db54911d7690dc601e76811846b211180bd8",
+        "../evaluator/core.py": "2c5153b9e9e4419d0827d83e51cd9287f8e1dd950705f51b3195a54966734479",
+        "../evaluator/evaluate_candidate.py": "70d6d34f8897c24400652aeccb46c2744a433ddf3bee16479b1bbd0ad5c31f27"
+      },
+      "trial_file_sha256": {
+        "candidates/01.json": "cb73a966218b28d08ff91d89916b3916d8442c16155e4e63729d1072c16f7c19",
+        "runs/trial-01/candidate.json": "cb73a966218b28d08ff91d89916b3916d8442c16155e4e63729d1072c16f7c19",
+        "runs/trial-01/hypothesis.txt": "224cf22ebda91e5fcdeae42cc96fd02db717d10ddc5ef2109251c3bf9a80d256",
+        "runs/trial-01/result.json": "d98c2c850a4b2e525015317ecc960eddbdc9f31fc1f7145575d27d09d71037ed",
+        "candidates/02.json": "0f33e3f6b79a1e72cb86cd852e681207d44686c1bdd497828f94cb5a2cd11033",
+        "runs/trial-02/candidate.json": "0f33e3f6b79a1e72cb86cd852e681207d44686c1bdd497828f94cb5a2cd11033",
+        "runs/trial-02/hypothesis.txt": "79b9eadd1069d8f1b15b17f531088bb07dbef4c971188aed8060981dc2a97a20",
+        "runs/trial-02/result.json": "524687fb1cd3b0b55aea73975bfc80b712e9d1e04241e4e03d70047f0403ef6a",
+        "candidates/03.json": "f89dadb60162b01b2f3db3d26f63f6d81ab32c3374a4d1a2269ba4d5b5bd5d48",
+        "runs/trial-03/candidate.json": "f89dadb60162b01b2f3db3d26f63f6d81ab32c3374a4d1a2269ba4d5b5bd5d48",
+        "runs/trial-03/hypothesis.txt": "48edb33579848050a3c0a65c1924238cc0cb713958771e9a42ddf26afe3b708d",
+        "runs/trial-03/result.json": "834e9fa0ed9a9e2169d530fe2bc0b291a473545b4b51b64ed1c9493f2d46ea25",
+        "candidates/04.json": "31d664062986397b955daaa978a3341d96f79ea9412adf69c403f5628b67c032",
+        "runs/trial-04/candidate.json": "31d664062986397b955daaa978a3341d96f79ea9412adf69c403f5628b67c032",
+        "runs/trial-04/hypothesis.txt": "9865e6214f6365e39a03dd3d4990ef2a8d7ad3c7b11779a545348b3a4a7befdb",
+        "runs/trial-04/result.json": "ae67f0b157e9065d7d44fc7bbf446022615f9e44e4cac8f4ba8a3add8ea633e8",
+        "candidates/05.json": "971cb5f9e26db60bdc2f93b78a49c9fab241db4fd35a829cbc0001b450f45c84",
+        "runs/trial-05/candidate.json": "971cb5f9e26db60bdc2f93b78a49c9fab241db4fd35a829cbc0001b450f45c84",
+        "runs/trial-05/hypothesis.txt": "4c682fefd43692db5672036bbcfe8f509bd35927f493fddaf9bcb20f75cbd2fa",
+        "runs/trial-05/result.json": "07c054ed86e61ac58e8815fcec32fbad7347940d6d042ee463c39ebd70a06ab5",
+        "candidates/06.json": "452602d9266ae3c73f2fb0933fe2b2bc169be0f8f891ea4a9a2450e7090d4d03",
+        "runs/trial-06/candidate.json": "452602d9266ae3c73f2fb0933fe2b2bc169be0f8f891ea4a9a2450e7090d4d03",
+        "runs/trial-06/hypothesis.txt": "77a5cbc35fab6770f325ee396d36534f4f0683b7bfa636dcb0629f2770f28b39",
+        "runs/trial-06/result.json": "e50a72b6df6506176e66e3b10fcbfe95962bed2afebf480e86e1caff3924d3f6"
+      },
+      "all_distinct_candidates": true,
+      "all_hypotheses_recorded": true
+    },
+    {
+      "name": "fresh-dev-agent-02",
+      "status": "SIX_DEV_CALLS_COMPLETE",
+      "selected_trial": 5,
+      "selected_candidate": {
+        "k": 100,
+        "bm25_weight": 0.5
+      },
+      "selected_dev_ndcg_exp_at_10": 0.2651829847739129,
+      "state_sha256": "9c0241d44de8f9ed50dd6ace62f688d7c71370b852cac96279a9a1bb78e7f66b",
+      "task_sha256": "1c9880e5ec6323e7c8d74dda0d3d0139c4db292afb653dd1d0fab28ad1c9f401",
+      "immutable_input_sha256": {
+        "data/dev_ranks.npz": "7e8430988983b1c538046b520e90a2f5ade719b691d2e766c3640bcaed7c9b88",
+        "data/dev_qrels.tsv": "b1d38b5e8f78c4a5820bce2b7ec2db54911d7690dc601e76811846b211180bd8",
+        "../evaluator/core.py": "2c5153b9e9e4419d0827d83e51cd9287f8e1dd950705f51b3195a54966734479",
+        "../evaluator/evaluate_candidate.py": "70d6d34f8897c24400652aeccb46c2744a433ddf3bee16479b1bbd0ad5c31f27"
+      },
+      "trial_file_sha256": {
+        "candidates/01.json": "db4942b5ebae10ab67c35a96d9b025b283af878f7916ba16aff48329c71aafed",
+        "runs/trial-01/candidate.json": "db4942b5ebae10ab67c35a96d9b025b283af878f7916ba16aff48329c71aafed",
+        "runs/trial-01/hypothesis.txt": "f4de2669cd42576f7e5114cc6c1066e277959962fe7d6fc613f8eb2e7df04353",
+        "runs/trial-01/result.json": "d98c2c850a4b2e525015317ecc960eddbdc9f31fc1f7145575d27d09d71037ed",
+        "candidates/02.json": "ad64ded2e61e385bcc83fbe3e43f6c6a4bda27ffb521595a35e579dc7af9acc4",
+        "runs/trial-02/candidate.json": "ad64ded2e61e385bcc83fbe3e43f6c6a4bda27ffb521595a35e579dc7af9acc4",
+        "runs/trial-02/hypothesis.txt": "71fbf166c2fb34e590f68d9989375c404c488c1b8c1862a285c7c81b2e2b3d77",
+        "runs/trial-02/result.json": "524687fb1cd3b0b55aea73975bfc80b712e9d1e04241e4e03d70047f0403ef6a",
+        "candidates/03.json": "8aeab8753e7bea2bb12fe11fe4d1619701b78be44f5ef49052436fdbf67119dd",
+        "runs/trial-03/candidate.json": "8aeab8753e7bea2bb12fe11fe4d1619701b78be44f5ef49052436fdbf67119dd",
+        "runs/trial-03/hypothesis.txt": "2df4da287d0626d7e6f1167b97566c116f5c3e37d095fcc06249c2d63f68d0bf",
+        "runs/trial-03/result.json": "834e9fa0ed9a9e2169d530fe2bc0b291a473545b4b51b64ed1c9493f2d46ea25",
+        "candidates/04.json": "2e75bf1b88f8fb8642481c92dd31f90d39808e887e15da1850be9acf3d37a75a",
+        "runs/trial-04/candidate.json": "2e75bf1b88f8fb8642481c92dd31f90d39808e887e15da1850be9acf3d37a75a",
+        "runs/trial-04/hypothesis.txt": "a2e6b951474d031d72040ce16e755f5cc268b06905caa6a12960e0c6c673a329",
+        "runs/trial-04/result.json": "ae67f0b157e9065d7d44fc7bbf446022615f9e44e4cac8f4ba8a3add8ea633e8",
+        "candidates/05.json": "661aae0e6375310f2dbd2497af6ae765ed8643df050275cd69d67997ca5312bd",
+        "runs/trial-05/candidate.json": "661aae0e6375310f2dbd2497af6ae765ed8643df050275cd69d67997ca5312bd",
+        "runs/trial-05/hypothesis.txt": "f1eba6106fe8f82706d933a103518cd3007c2d77a7f0655244cf2aac4f9595b1",
+        "runs/trial-05/result.json": "07c054ed86e61ac58e8815fcec32fbad7347940d6d042ee463c39ebd70a06ab5",
+        "candidates/06.json": "c8b1dc15ec4640322c8838b9204d1a153ae926629ddacda89b174d5a8b850b0b",
+        "runs/trial-06/candidate.json": "c8b1dc15ec4640322c8838b9204d1a153ae926629ddacda89b174d5a8b850b0b",
+        "runs/trial-06/hypothesis.txt": "030079180fca97f6f007e8c4dccb986518447b46ad569ba906f6b416d58b660e",
+        "runs/trial-06/result.json": "e4d920e8b0716647a5cbaf17d126a6a2128407e89e5c7cf31cd9c2e9b755cf88"
+      },
+      "all_distinct_candidates": true,
+      "all_hypotheses_recorded": true
+    },
+    {
+      "name": "fresh-dev-agent-03",
+      "status": "SIX_DEV_CALLS_COMPLETE",
+      "selected_trial": 3,
+      "selected_candidate": {
+        "k": 100,
+        "bm25_weight": 0.5
+      },
+      "selected_dev_ndcg_exp_at_10": 0.2651829847739129,
+      "state_sha256": "d13acdb6a3eb3bd5400a5cac149eeddb4387afa10cb924a6d5354005b6b5e47c",
+      "task_sha256": "1c9880e5ec6323e7c8d74dda0d3d0139c4db292afb653dd1d0fab28ad1c9f401",
+      "immutable_input_sha256": {
+        "data/dev_ranks.npz": "7e8430988983b1c538046b520e90a2f5ade719b691d2e766c3640bcaed7c9b88",
+        "data/dev_qrels.tsv": "b1d38b5e8f78c4a5820bce2b7ec2db54911d7690dc601e76811846b211180bd8",
+        "../evaluator/core.py": "2c5153b9e9e4419d0827d83e51cd9287f8e1dd950705f51b3195a54966734479",
+        "../evaluator/evaluate_candidate.py": "70d6d34f8897c24400652aeccb46c2744a433ddf3bee16479b1bbd0ad5c31f27"
+      },
+      "trial_file_sha256": {
+        "candidates/01.json": "db4942b5ebae10ab67c35a96d9b025b283af878f7916ba16aff48329c71aafed",
+        "runs/trial-01/candidate.json": "db4942b5ebae10ab67c35a96d9b025b283af878f7916ba16aff48329c71aafed",
+        "runs/trial-01/hypothesis.txt": "32733b25d355b0ea58c572ca55b6948283f3280bf17a4255eed3f229d6574f2d",
+        "runs/trial-01/result.json": "d98c2c850a4b2e525015317ecc960eddbdc9f31fc1f7145575d27d09d71037ed",
+        "candidates/02.json": "2e75bf1b88f8fb8642481c92dd31f90d39808e887e15da1850be9acf3d37a75a",
+        "runs/trial-02/candidate.json": "2e75bf1b88f8fb8642481c92dd31f90d39808e887e15da1850be9acf3d37a75a",
+        "runs/trial-02/hypothesis.txt": "f562f748e716a32b63eb122d8bca389f797e1d4a15692ab5f4848294f15dc60b",
+        "runs/trial-02/result.json": "ae67f0b157e9065d7d44fc7bbf446022615f9e44e4cac8f4ba8a3add8ea633e8",
+        "candidates/03.json": "661aae0e6375310f2dbd2497af6ae765ed8643df050275cd69d67997ca5312bd",
+        "runs/trial-03/candidate.json": "661aae0e6375310f2dbd2497af6ae765ed8643df050275cd69d67997ca5312bd",
+        "runs/trial-03/hypothesis.txt": "2df967072edec76b85c135ccb2f045f62908ce6c262a91a5e85ca9c332dc8492",
+        "runs/trial-03/result.json": "07c054ed86e61ac58e8815fcec32fbad7347940d6d042ee463c39ebd70a06ab5",
+        "candidates/04.json": "deebc89bbab068a1488a2a74014ce0a9466786603de71a2965f6a2eca091284c",
+        "runs/trial-04/candidate.json": "deebc89bbab068a1488a2a74014ce0a9466786603de71a2965f6a2eca091284c",
+        "runs/trial-04/hypothesis.txt": "b180b1216e0f1bea5934dd0a045fa803621f96b5fa62b33def287e3086bc621a",
+        "runs/trial-04/result.json": "fab0d4cd389b8543ea9c3b8f0b341eb8321a55834bd223d8dfc9ad93978377d4",
+        "candidates/05.json": "5a40a9a1841af793f4f7b316041679b59dd9a9485b22858cef857ff9a34badd0",
+        "runs/trial-05/candidate.json": "5a40a9a1841af793f4f7b316041679b59dd9a9485b22858cef857ff9a34badd0",
+        "runs/trial-05/hypothesis.txt": "d57104e8edf8a1080c4730d58aae721ea725cba16ba1656ec888e777ff52cea7",
+        "runs/trial-05/result.json": "d5387da25048b3e19a93629845ef0ab06ab62f9ba6c966d3ff879acba6ef4d8a",
+        "candidates/06.json": "f24eec92dd3785305fefde01bc2b340e64d3b8e510d8c033aa06734a3cf0eb0a",
+        "runs/trial-06/candidate.json": "f24eec92dd3785305fefde01bc2b340e64d3b8e510d8c033aa06734a3cf0eb0a",
+        "runs/trial-06/hypothesis.txt": "72190b3ee018932cd8a4ec07fe4c26caac41170f11178d83adfe14cd8086b3d9",
+        "runs/trial-06/result.json": "e50a72b6df6506176e66e3b10fcbfe95962bed2afebf480e86e1caff3924d3f6"
+      },
+      "all_distinct_candidates": true,
+      "all_hypotheses_recorded": true
+    }
+  ],
+  "test_labels_read_by_this_script": false,
+  "scope": "Logical tool protocol and trace checks; directories were not an OS sandbox, and the parent had seen v4 public-test analyses before these fresh agents."
+}

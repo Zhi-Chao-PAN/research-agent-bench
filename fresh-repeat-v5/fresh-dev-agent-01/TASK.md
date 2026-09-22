@@ -1,0 +1,9 @@
+# NFCorpus weighted-RRF development task
+
+You have six sequential development evaluations and a 15-minute wall-clock budget. Write exactly one new JSON file per request in `candidates/`, containing only `{"k": INTEGER, "bm25_weight": FLOAT}`. `k` is 1..200 and `bm25_weight` is 0..1. Run `supervisor.py --candidate candidates/NN.json --hypothesis "at least twenty characters explaining this choice"`; it returns development metrics. The hypothesis is fixed before evaluation and saved as evidence. Use only returned development feedback to select later configurations. Do not repeat a candidate.
+
+The fixed BM25 and TF-IDF rank cache plus development qrels are immutable inputs. This is a program protocol and instruction boundary, not an OS sandbox. There are no test labels, test rankings, test outputs, baseline outputs, or external data in this directory. Do not claim test or generalization performance. After six calls, the supervising workflow selects the highest observed development nDCG@10 (ties select the earliest trial) and may separately evaluate the selected candidate on the public NFCorpus test split outside this directory.
+
+```json
+{"benchmark":"BEIR NFCorpus","objective":"maximize development nDCG@10 for cached BM25/TF-IDF weighted RRF","max_trials":6,"max_wall_seconds":900,"per_trial_timeout_seconds":90,"resource_limits":{"cpu_threads_max":2,"gpu":"not used"},"public_test":"NFCorpus test labels are public, but are deliberately withheld from this development task and only used after selection","immutable_sha256":{"data/dev_ranks.npz":"7e8430988983b1c538046b520e90a2f5ade719b691d2e766c3640bcaed7c9b88","data/dev_qrels.tsv":"b1d38b5e8f78c4a5820bce2b7ec2db54911d7690dc601e76811846b211180bd8","../evaluator/core.py":"2c5153b9e9e4419d0827d83e51cd9287f8e1dd950705f51b3195a54966734479","../evaluator/evaluate_candidate.py":"70d6d34f8897c24400652aeccb46c2744a433ddf3bee16479b1bbd0ad5c31f27"}}
+```

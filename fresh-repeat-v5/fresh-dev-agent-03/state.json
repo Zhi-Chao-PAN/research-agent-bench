@@ -1,0 +1,101 @@
+{
+  "started_at": 1790103155.6521246,
+  "trials": [
+    {
+      "trial": 1,
+      "candidate": {
+        "k": 60,
+        "bm25_weight": 0.5
+      },
+      "hypothesis": "\u4ee5\u7ecf\u5178RRF\u7684k\u7b49\u4e8e60\u548c\u4e24\u8def\u7b49\u6743\u4f5c\u4e3a\u4e2d\u6027\u8d77\u70b9\uff0c\u5148\u89c2\u5bdf\u5f00\u53d1\u96c6\u5bf9\u878d\u5408\u5e73\u6ed1\u5ea6\u7684\u5b9e\u9645\u54cd\u5e94\u3002",
+      "status": "SUCCESS",
+      "exit_code": 0,
+      "metrics": {
+        "ndcg@10": 0.2651036767543689,
+        "recall@10": 0.11050219523207144,
+        "mrr@10": 0.4570461003331373
+      },
+      "wall_seconds": 0.1808249829991837
+    },
+    {
+      "trial": 2,
+      "candidate": {
+        "k": 20,
+        "bm25_weight": 0.5
+      },
+      "hypothesis": "\u9996\u8f6e\u4e2d\u6027\u8bbe\u7f6e\u5f97\u5230\u53ef\u7528\u57fa\u7ebf\uff0c\u56e0\u6b64\u964d\u4f4ek\u4ee5\u66f4\u5f3a\u8c03\u524d\u6392\u7ed3\u679c\uff0c\u68c0\u9a8c\u5f00\u53d1\u96c6\u662f\u5426\u504f\u597d\u66f4\u5f3a\u7684\u6392\u540d\u5934\u90e8\u4fe1\u53f7\u3002",
+      "status": "SUCCESS",
+      "exit_code": 0,
+      "metrics": {
+        "ndcg@10": 0.264772536495393,
+        "recall@10": 0.10974921884769703,
+        "mrr@10": 0.4573424946110132
+      },
+      "wall_seconds": 0.19343516299704788
+    },
+    {
+      "trial": 3,
+      "candidate": {
+        "k": 100,
+        "bm25_weight": 0.5
+      },
+      "hypothesis": "\u8f83\u5c0fk\u4f7fnDCG@10\u7565\u4f4e\u4e8e\u9996\u8f6e\uff0c\u6545\u4fdd\u6301\u7b49\u6743\u5e76\u589e\u5927k\u6765\u52a0\u5f3a\u4e24\u79cd\u6392\u5e8f\u5668\u4e2d\u8f83\u6df1\u4f4d\u7f6e\u7684\u4e00\u81f4\u6027\u8d21\u732e\u3002",
+      "status": "SUCCESS",
+      "exit_code": 0,
+      "metrics": {
+        "ndcg@10": 0.2651829847739129,
+        "recall@10": 0.11050219523207144,
+        "mrr@10": 0.4569432196747012
+      },
+      "wall_seconds": 0.19894701800512848
+    },
+    {
+      "trial": 4,
+      "candidate": {
+        "k": 100,
+        "bm25_weight": 0.75
+      },
+      "hypothesis": "k\u4e3a100\u5728\u7b49\u6743\u8bd5\u9a8c\u4e2d\u53d6\u5f97\u5f53\u524d\u6700\u9ad8nDCG@10\uff0c\u63a5\u7740\u63d0\u9ad8BM25\u6743\u91cd\uff0c\u6d4b\u8bd5\u5f00\u53d1\u96c6\u662f\u5426\u9700\u8981\u66f4\u504f\u5411\u8bcd\u9879\u5339\u914d\u7684\u8bc1\u636e\u3002",
+      "status": "SUCCESS",
+      "exit_code": 0,
+      "metrics": {
+        "ndcg@10": 0.2651780951220642,
+        "recall@10": 0.10626649977552682,
+        "mrr@10": 0.4646310993533216
+      },
+      "wall_seconds": 0.18832461399870226
+    },
+    {
+      "trial": 5,
+      "candidate": {
+        "k": 100,
+        "bm25_weight": 0.25
+      },
+      "hypothesis": "\u63d0\u9ad8BM25\u6743\u91cd\u672a\u6539\u5584\u5f53\u524d\u6700\u4f73\u5f00\u53d1nDCG@10\uff0c\u56e0\u6b64\u5728\u76f8\u540ck\u4e0b\u8f6c\u800c\u63d0\u9ad8TF-IDF\u76f8\u5bf9\u5f71\u54cd\uff0c\u68c0\u67e5\u6743\u91cd\u65b9\u5411\u662f\u5426\u5b58\u5728\u4e0d\u5bf9\u79f0\u6536\u76ca\u3002",
+      "status": "SUCCESS",
+      "exit_code": 0,
+      "metrics": {
+        "ndcg@10": 0.26011614284726076,
+        "recall@10": 0.10801879256556234,
+        "mrr@10": 0.45424015285126396
+      },
+      "wall_seconds": 0.19145004599704407
+    },
+    {
+      "trial": 6,
+      "candidate": {
+        "k": 150,
+        "bm25_weight": 0.5
+      },
+      "hypothesis": "\u4e24\u4fa7\u6743\u91cd\u504f\u79fb\u90fd\u672a\u8d85\u8fc7\u7b49\u6743\u57fa\u7ebf\uff0c\u4e14k\u4ece60\u589e\u81f3100\u7565\u6709\u63d0\u5347\uff0c\u6545\u4fdd\u6301\u7b49\u6743\u5e76\u7ee7\u7eed\u589e\u5927k\u6765\u68c0\u9a8c\u8be5\u8d8b\u52bf\u3002",
+      "status": "SUCCESS",
+      "exit_code": 0,
+      "metrics": {
+        "ndcg@10": 0.2649549838326043,
+        "recall@10": 0.1104140118105547,
+        "mrr@10": 0.4569432196747012
+      },
+      "wall_seconds": 0.18381343300279696
+    }
+  ]
+}

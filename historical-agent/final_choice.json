@@ -1,0 +1,1 @@
+{"selected_trial": 6, "candidate": {"k": 60, "bm25_weight": 0.55}, "reason": "六次开发评估中，试验6的nDCG@10为0.2651113228826503，为观测最高值。"}

@@ -1,0 +1,26 @@
+{
+  "status": "VERIFIED",
+  "matrix_points": 189,
+  "random_search_repeats": 100,
+  "random_development_calls": 600,
+  "distinct_split_candidate_cases_recomputed": 1078,
+  "query_candidate_cases_recomputed": 348983,
+  "reference_ranking": "Full np.argsort stable, independent of partial-selection implementation",
+  "both_gain_definitions_recomputed": true,
+  "development_selections_recomputed": 101,
+  "bootstrap_resamples_recomputed": 10000,
+  "cache_sha256": {
+    "dev_qrels.tsv": "b1d38b5e8f78c4a5820bce2b7ec2db54911d7690dc601e76811846b211180bd8",
+    "dev_ranks.npz": "7e8430988983b1c538046b520e90a2f5ade719b691d2e766c3640bcaed7c9b88",
+    "manifest.json": "6f0dee722186b747f8bbd50e99233491cc37cf35c8816159a97bd159e60b50d7",
+    "test_qrels.tsv": "f8fba6ef3d4dd9c3a242a8ba4ae38276fc3622fce7dcbae764766d564542fd2a",
+    "test_ranks.npz": "f06d4438dfa2b8912db0afb25e38f32518ae1fc44c25f6cadc1579dc0aefd700"
+  },
+  "source_sha256": {
+    "run_phase2.py": "f21cae2e139d270b8b27886e9284a2b0d90c678bc82dce71b1080cbbac0ba7e6",
+    "verify_phase2.py": "e8cd26c25c9de29f2230458618026c1b8999b2babeb9f1dc5d0debea1a9505fd",
+    "phase2_protocol.json": "8496047097abd5b2c24bc9fd5f6737a304e7dc775b9f5f463cd61f1297655829",
+    "evaluator/core.py": "2c5153b9e9e4419d0827d83e51cd9287f8e1dd950705f51b3195a54966734479"
+  },
+  "scope": "Post-hoc search and metric analysis; additional LLM trajectories NOT_RUN"
+}

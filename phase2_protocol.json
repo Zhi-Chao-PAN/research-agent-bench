@@ -1,0 +1,13 @@
+{
+  "version": "4.0",
+  "status": "post_hoc_exploratory",
+  "benchmark": "BEIR NFCorpus fixed cached BM25/TF-IDF ranks",
+  "primary_metric": "nDCG_exp@10 using gain 2^rel-1",
+  "secondary_metric": "nDCG_linear@10 using gain rel",
+  "development_selection": "maximum dev nDCG_exp@10; ties earliest deterministic enumeration",
+  "matrix": {"k": [1,5,10,20,40,60,100,150,200], "bm25_weight_start": 0.0, "bm25_weight_stop": 1.0, "bm25_weight_step": 0.05},
+  "random_search": {"seeds": "1000..1099 inclusive", "draws_per_seed": 6, "k_uniform_integer": [1,200], "weight_uniform": [0.0,1.0]},
+  "comparators": {"historical_agent": {"k":60,"bm25_weight":0.55}, "preset_six_point_selected": {"k":200,"bm25_weight":1.0}},
+  "bootstrap": {"resamples": 10000, "seed": 20260923, "interval": "percentile 95% paired query bootstrap"},
+  "limits": ["The original single six-call agent result was already observed; phase 2 is exploratory and post-hoc.", "The same public test labels are used for post-hoc diagnostics and must not be treated as blind evaluation.", "100 random-search repeats are optimization repetitions, not 100 LLM trajectories.", "No new LLM trajectory is fabricated or inferred.", "CPU at most 2 threads; no large model is rebuilt."]
+}

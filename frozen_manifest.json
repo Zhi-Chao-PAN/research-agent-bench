@@ -1,0 +1,7 @@
+{
+  "official_source": {"url": "https://public.ukp.informatik.tu-darmstadt.de/thakur/BEIR/datasets/nfcorpus.zip", "http_status": 200, "archive_sha256": "efe5be03f8c5b86a5870102d0599d227c8c6e2484328e68c6522560385671b0b"},
+  "cpu_threads_max": 2,
+  "gpu": "not used",
+  "code_sha256": {"evaluator/baselines.py": "65a17e062569a20cae3bcfb76e87d8586f6bba8f24ceba9680584f94d4e25c2b", "evaluator/build_cache.py": "28ae75995642eef5c95f0c8638f82743fcfa99f9d396cec2f6d07410f0476d74", "evaluator/core.py": "2c5153b9e9e4419d0827d83e51cd9287f8e1dd950705f51b3195a54966734479", "evaluator/evaluate_candidate.py": "70d6d34f8897c24400652aeccb46c2744a433ddf3bee16479b1bbd0ad5c31f27", "evaluator/independent_check.py": "c67315c010d6075bf2d09b8dbc3e2d1d48b77d1b7d2f8193671e198916347bce", "agent-dev/supervisor.py": "62bdc3a174b9554149feef131731a451bae8268eb42a690c5e0033e9fabbd3ac"},
+  "cache_manifest_sha256": "6f0dee722186b747f8bbd50e99233491cc37cf35c8816159a97bd159e60b50d7"
+}
