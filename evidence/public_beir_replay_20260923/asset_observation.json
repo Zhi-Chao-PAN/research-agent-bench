@@ -1,0 +1,16 @@
+{
+  "run_date_local": "2026-09-23",
+  "run_by": "AI agent (not applicant)",
+  "snapshot": "research-agent-bench reviewer-snapshot-2026-09-23-r2",
+  "snapshot_commit": "e23760f64c772cf7225280a991fd102740c78def",
+  "command": ".venv/bin/python prepare_nfcorpus.py --download --archive raw/nfcorpus.zip --data data",
+  "archive_source": "https://public.ukp.informatik.tu-darmstadt.de/thakur/BEIR/datasets/nfcorpus.zip",
+  "archive_kind": "BEIR-converted NFCorpus archive, not the original Heidelberg full-corpus download",
+  "archive_bytes": 2448432,
+  "archive_sha256": "efe5be03f8c5b86a5870102d0599d227c8c6e2484328e68c6522560385671b0b",
+  "python": "3.12.14",
+  "numpy": "2.2.6",
+  "scikit_learn": "1.6.1",
+  "rank_bm25": "0.2.2",
+  "scope": "Local execution log and digest, not independently authenticated network provenance"
+}

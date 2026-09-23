@@ -1,0 +1,21 @@
+{
+  "split": "public_test",
+  "test_labels_read": true,
+  "candidate": {
+    "bm25_weight": 0.5,
+    "k": 100
+  },
+  "query_count": 323,
+  "metrics": {
+    "nDCG_exp@10": 0.3070440739845281,
+    "nDCG_linear@10": 0.30640826479410294
+  },
+  "sklearn_per_query_means": {
+    "nDCG_exp@10": 0.30817433309093006,
+    "nDCG_linear@10": 0.30742813039135364
+  },
+  "manual_matches_sklearn": {
+    "exp": false,
+    "linear": false
+  }
+}
