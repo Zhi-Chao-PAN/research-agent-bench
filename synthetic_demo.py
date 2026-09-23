@@ -51,6 +51,39 @@ def write_fixture(cache: Path) -> None:
     )
 
 
+def label_fabricated_task(task_doc: Path) -> None:
+    """Remove NFCorpus and test-split claims from the development-only fixture."""
+    source = task_doc.read_text(encoding="utf-8")
+    before, opening, rest = source.partition("```json\n")
+    payload, closing, after = rest.partition("\n```")
+    if not opening or not closing:
+        raise ValueError("Generated task protocol block is incomplete")
+
+    heading = "# NFCorpus weighted-RRF development task"
+    test_sentence = (
+        "After six calls, the supervising workflow selects the highest observed "
+        "development nDCG@10 (ties select the earliest trial) and may separately "
+        "evaluate the selected candidate on the public NFCorpus test split outside "
+        "this directory."
+    )
+    if before.count(heading) != 1 or before.count(test_sentence) != 1:
+        raise ValueError("Generated task wording changed; review fixture labeling")
+    before = before.replace(heading, "# Fabricated weighted-RRF development task")
+    before = before.replace(
+        test_sentence,
+        "After six calls, select the highest observed development nDCG@10 "
+        "(ties select the earliest successful trial). This fabricated fixture "
+        "has no test split or post-selection test evaluation.",
+    )
+    protocol = json.loads(payload)
+    protocol["benchmark"] = "fabricated 3-query, 12-document fixture"
+    protocol["public_test"] = None
+    task = before + opening + json.dumps(protocol, ensure_ascii=False, separators=(",", ":")) + closing + after
+    if "NFCorpus" in task:
+        raise ValueError("NFCorpus claim remains in fabricated task")
+    task_doc.write_text(task, encoding="utf-8")
+
+
 def run_trial(task: Path, number: int, candidate: dict, hypothesis: str) -> dict:
     candidate_path = task / "candidates" / f"{number:02d}.json"
     candidate_path.write_text(json.dumps(candidate) + "\n", encoding="utf-8")
@@ -83,16 +116,7 @@ def main() -> None:
                 capture_output=True,
                 check=True,
             )
-        task_doc = task / "TASK.md"
-        task_doc.write_text(
-            task_doc.read_text(encoding="utf-8")
-            .replace("NFCorpus", "synthetic fixture")
-            .replace(
-                "BEIR synthetic fixture",
-                "fabricated 3-query, 12-document fixture (not NFCorpus)",
-            ),
-            encoding="utf-8",
-        )
+        label_fabricated_task(task / "TASK.md")
         if args.manual:
             print(json.dumps({
                 "status": "READY_FOR_PERSONAL_TRIAL",
