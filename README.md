@@ -12,11 +12,7 @@
 
 本轮由 AI 辅助实现、执行和分析；公开仓库与日志不证明申请人已经独立编程、复跑或答辩。公开测试参数面此前已被研究者查看，全部扩展按**探索性**结论解释。详情见 [`研究报告.md`](研究报告.md) 和 [`fresh-repeat-v5/研究补实验报告.md`](fresh-repeat-v5/研究补实验报告.md)。
 
-公开仓库发布前，已在独立临时目录从固定原始 ZIP 重建缓存、复核全部旧数值结果并成功启动一条新开发任务；具体命令范围和结果见 [`REPRODUCTION_QA.md`](REPRODUCTION_QA.md)。
-
-发布后又从 r2 固定标签新克隆源码，在新 Python 3.12 环境中用**同机留存、哈希吻合**的上游 ZIP 重建三分割缓存；189 点参数面、100 组六次随机搜索与 10,000 次配对抽样均再次核验。另用不导入项目指标函数的完整稳定排序检查器复算冻结候选的 323 条公开测试查询。见[发布后源码复跑报告](POST_RELEASE_R2_SOURCE_REPLAY_2026-09-23.md)及[公开记录清单](POST_RELEASE_R2_SHA256SUMS)；CI 只验证这些公开记录的文件哈希和既有离线检查，不下载 NFCorpus 或重跑该数据相关实验。此次复跑不是新的 LLM 轨迹、跨机验证或申请人本人实操。
-
-另一次[新获取 BEIR 固定快照的同机复跑](PUBLIC_BEIR_UPSTREAM_REPLAY_2026-09-23.md)由 AI 代理在干净的 r2 checkout 执行 `prepare_nfcorpus.py --download`，不复用上述留存 ZIP；下载后本地 SHA-256 与固定值相同，重建缓存及四份指标/清单 JSON 与此前逐字节一致，另附一份资产观察 JSON。独立检查器只重算所选配置的指标，仍共用排名缓存和公开标签。记录只能说明本机观察到的执行，不能独立认证网络传输、证明跨机或本人实操；研究代理仍未胜过预设搜索。
+先从下面的“三分钟审阅”运行离线检查；需要追溯重建过程时，再展开复跑记录。
 
 ## 仓库里有什么
 
@@ -51,6 +47,17 @@ docker run --rm --network none research-agent-bench-audit:2026-09-23
 ```
 
 镜像仅安装固定版本 NumPy 供虚构数据演示使用；`verify_public_traces.py` 不依赖 NFCorpus 原文。预期依次输出 `PASS_TRACE_ONLY` 和 `PASS_SYNTHETIC_DEMO`。`--network none` 只约束运行阶段；构建时仍须从上游下载基础镜像与 Python 包。容器**不重建 NFCorpus 排名缓存、不重跑 LLM 轨迹、不证明申请人本人会使用 Docker**。公开 CI 的 `container-audit` 工作会实际构建、运行此入口；若本机 Docker Desktop 未为 WSL 发行版启用集成，仍须把本机运行状态记为未验收。
+
+<details>
+<summary>公开前后的复跑记录与证据边界</summary>
+
+公开仓库发布前，已在独立临时目录从固定原始 ZIP 重建缓存、复核全部旧数值结果并成功启动一条新开发任务；具体命令范围和结果见 [`REPRODUCTION_QA.md`](REPRODUCTION_QA.md)。
+
+发布后又从 r2 固定标签新克隆源码，在新 Python 3.12 环境中用**同机留存、哈希吻合**的上游 ZIP 重建三分割缓存；189 点参数面、100 组六次随机搜索与 10,000 次配对抽样均再次核验。另用不导入项目指标函数的完整稳定排序检查器复算冻结候选的 323 条公开测试查询。见[发布后源码复跑报告](POST_RELEASE_R2_SOURCE_REPLAY_2026-09-23.md)及[公开记录清单](POST_RELEASE_R2_SHA256SUMS)；CI 只验证这些公开记录的文件哈希和既有离线检查，不下载 NFCorpus 或重跑该数据相关实验。此次复跑不是新的 LLM 轨迹、跨机验证或申请人本人实操。
+
+另一次[新获取 BEIR 固定快照的同机复跑](PUBLIC_BEIR_UPSTREAM_REPLAY_2026-09-23.md)由 AI 代理在干净的 r2 checkout 执行 `prepare_nfcorpus.py --download`，不复用上述留存 ZIP；下载后本地 SHA-256 与固定值相同，重建缓存及四份指标/清单 JSON 与此前逐字节一致，另附一份资产观察 JSON。独立检查器只重算所选配置的指标，仍共用排名缓存和公开标签。记录只能说明本机观察到的执行，不能独立认证网络传输、证明跨机或本人实操；研究代理仍未胜过预设搜索。
+
+</details>
 
 ## 从上游数据重建和复核
 
